@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner{
+    position: relative;
+    background-color: rgb(217 75 11 / 92%);
+}
+.banner-row{
+    height: calc(100vh - 100px);
+}
+.banner h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+.banner p{
+    padding-right:100px ;
+    font-weight: 500;
+}
+
+.banner button{
+    width: 300px; 
+    font-weight: bold;
+    padding: 15px 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    color: black;
+}
+.banner button:nth-child(2){
+    color:white;
+}
+.plate-bg{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.plate{
+    z-index: 2;
+    animation: ro 100s infinite;
+}
+
+
+.social{
+    font-family: 'Fasthand', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    color:#ffc84e;
+    animation: move 4s ease-in infinite;
+}
+
+@keyframes ro{
+    0% {
+        transform: rotate(90deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+      
+}
+  
+  @keyframes move {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    40% {
+      transform: translate(-12px, -12px);
+    }
+    50% {
+      transform: translate(-12px, -12px);
+    }
+    60% {
+      transform: translate(-12px, -12px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
