@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row{
+    margin: 0 !important;
+}
+.navbar {
+    background-color: white;
+}
+
+.navbar .nav-items a {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navbar .nav-items a:hover {
+    background-color: orange;
+}
+
+.banner {
+    background-image: url(./assets/aboutbanner.jpg);
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.banner .row{
+    height: 100%;
+}
+.about{
+    padding: 50px 0px;
+}
+footer {
+    background-color: #67231e;
+    color: rgb(186, 176, 176);
+}
+
+.menu .menu-nav a{
+    padding: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+}
+.menu .menu-nav a:hover{
+    background-color: coral;
+}
+.menu .menu-nav .active{
+    background-color: rgb(212, 140, 6);
+}
+.menuitems h3{
+    color: white;
+}
+.menuitems p{
+    font-family: sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+.menuitems .col-5{
+    background-color: #a03930;
+    border-radius: 20px;
+}
+
+.menuitems h6{
+    background-color: orange;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 998px) {
+.menu .menu-nav a{
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+}
+.mm{
+    background-color: #a03930;
+}
+#cc{
+    display: none !important;
+}

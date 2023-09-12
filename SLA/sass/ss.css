@@ -1,0 +1,87 @@
+.nav-link {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+  }
+  
+  .nav-item {
+    padding: 0px 10px;
+  }
+  
+  .nav-item:hover {
+    background-color: orange;
+  }
+  
+  .navbar-toggler {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 998px) {
+    .navbar-toggler {
+      display: block;
+    }
+    .ads {
+      display: none;
+    }
+    .modal {
+      max-width: 90vw;
+    }
+    .modal h2 {
+      font-size: 25px;
+    }
+    .modal h3 {
+      font-size: 15px;
+    }
+    .modal p {
+      font-size: 13px;
+    }
+    .sss_title {
+      font-size: 40px;
+    }
+    .a-img {
+      width: 300px !important;
+    }
+    .count {
+      margin: 5px;
+      height: 200px;
+    }
+    #cc {
+      display: flex !important;
+    }
+    .b {
+      display: none;
+    }
+    .b-a {
+      display: block !important;
+    }
+    .owl-carousel .owl-item .card .name {
+      left: 0 !important;
+    }
+    
+  }
+  .b {
+    background-color: rgb(243, 116, 12);
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-top: 7px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 360px) {
+    .owl-carousel .owl-item .card .name {
+      left: 0 !important;
+    }
+  }
+  .b-a {
+    display: none;
+  }
+  
+  .xx {
+    display: none !important;
+  }
+
+  .bg-book {
+    background-color: rgb(243, 116, 12);
+  }
+  #cc{
+    display:none !important;
+  }
