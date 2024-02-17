@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <h1>QR Code Scanner</h1>
+    <video id="qr-video" width="100%" height="100%" playsinline></video>
+    <p id="result"></p>
+
+    <script src="https://rawgit.com/zxing-js/library/master/plusone/zxing.js"></script>
+    <script src="https://rawgit.com/zxing-js/library/master/plusone/index.js"></script>
+
+    <script>
+        const video = document.getElementById('qr-video');
+
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+            .then((stream) => {
+                video.srcObject = stream;
+                video.play();
+
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                codeReader.decodeFromVideoDevice(undefined, 'qr-video', (result, err) => {
+                    if (result) {
+                        document.getElementById('result').textContent = 'Scanned Data: ' + result.text;
+                    }
+                    if (err && !(err instanceof ZXing.NotFoundException)) {
+                        console.error('Error decoding QR code:', err);
+                    }
+                });
+            })
+            .catch((err) => {
+                console.error('Error accessing camera:', err); 
+            });
+    </script>
+</body>
+</html>
