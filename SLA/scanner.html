@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scr</title>
+    <title>Document</title>
+    <style>
+        .qr{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>QR Code Scanner....</h1>
-    <video id="qr-video" width="100%" height="100%" playsinline></video>
-    <p id="result"></p>
-
-    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <div class="qr"></div>
+    <div id="scanner"></div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
-        const video = document.getElementById('qr-video');
-        const resultElement = document.getElementById('result');
+        function domReady(fn){
+            if(document.readyState == "complete" || document.readyState == "interactive"){
+                console.log("yes");
+                setTimeout(fn,1);
 
-        // Initialize Instascan
-        const scanner = new Instascan.Scanner({ video });
+            }else{
+                document.addEventListener("DOMContentLoaded",fn);
+            }
+        }
 
-        // Add a listener for when a QR code is scanned
-        scanner.addListener('scan', function (content) {
-            resultElement.textContent = 'Scanned Data: ' + content;
-
-            // Send the scanned data to the server using AJAX
-            // You can use fetch or another AJAX library for this
-            fetch('process.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ scannedData: content }),
-            });
-        });
-
-        // Start the camera
-        Instascan.Camera.getCameras()
-            .then(function (cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[0]);  // Use the first camera available
-                } else {
-                    console.error('No cameras found.');
+        domReady(function(){
+            var qr = document.getElementsByClassName("qr")[0];
+            var lastResult,countResults = 0;
+            function onScanSuccess(decodeText,decodeResult){
+                if(decodeResult !== lastResult){
+                    countResults++;
+                    lastResult = decodeText;
+                    alert(decodeText);
                 }
-            })
-            .catch(function (err) {
-                console.error('Error accessing camera:', err);
-            });
+            }
+
+            var scan = new Html5QrcodeScanner("scanner",{fps:10,qrbox:250});
+
+            scan.render(onScanSuccess);
+        })
+
     </script>
 </body>
 </html>
