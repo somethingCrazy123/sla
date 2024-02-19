@@ -67,7 +67,7 @@
         
         
         function stopScan(){
-            document.getElementsByClassName("content-center")[0].style.display = "block";
+            document.getElementsByClassName("content-center")[0].style.visibility = "visible";
             html5QrCode.stop().then((ignore) => {
         }).catch((err) => {
           alert("Something is wrong with the qr scanner, try after sometime");
