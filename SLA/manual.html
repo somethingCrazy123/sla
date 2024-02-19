@@ -45,6 +45,8 @@
         const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             
                 alert("Hey Jinny Kuriakose mwoluse Your attendance has been marked successfully");
+                document.getElementsByClassName("content-center")[0].style.display = "block";
+                stopScan();
             
         };
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
@@ -52,6 +54,7 @@
         
         
         function startScan(){
+        document.getElementsByClassName("content-center")[0].style.display = "none";
         
         html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
         
