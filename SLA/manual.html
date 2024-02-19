@@ -57,7 +57,7 @@
         
         
         function startScan(){
-        document.getElementsByClassName("content-center")[0].style.display = "none";
+        document.getElementsByClassName("content-center")[0].style.visibility = "hidden";
         
         html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
         
